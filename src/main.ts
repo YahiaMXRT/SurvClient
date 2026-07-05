@@ -28,6 +28,7 @@ m.addEventListener("sendchatmessage", (e: any) => {
             a2: e.message.split(" ")[1]
         }
         if (args.a2 == "fps") {
+            mcSettings.renderDistanceChunks = 2
             mcSettings.fog = false
             mcSettings.mipmapLevels = 0.0
             mcSettings.clouds = 0.0
