@@ -24,7 +24,7 @@ m.addEventListener("sendchatmessage", (e: any) => {
             m.displayToChat("§c Fullbright disabled");
         }
     } else if (e.message === "!help") {
-        m.displayToChat(" §k help\n§3 !fb (FullBright)\n§2 !help (this text)\n§1 !mode (fps, fancy)\n§b !version (self explanatory)\n§8 !packetMove (toggles the sending of the motion packet)")
+        m.displayToChat(" §k help\n§3 !fb (FullBright)\n§2 !help (this text)\n§1 !mode (fps, fancy)\n§b !version (self explanatory)")
     }
     else if (e.message.startsWith("!mode")) {
         var args = {
@@ -56,15 +56,6 @@ m.addEventListener("sendchatmessage", (e: any) => {
     } else if (e.message === "!version")
     { 
         m.displayToChat("§9 Current Client Version: 0.0.1")
-    } else if (e.message == "!packetMove") {
-        if (toggles.packetMoveDisabled === false) {
-            toggles.packetMoveDisabled = true
-            m.displayToChat("§a Packet enabled");
-        }
-        if (toggles.packetMoveDisabled === true) {
-            toggles.packetMoveDisabled = false
-            m.displayToChat("§c Packet disabled");
-        }
     }
     else {
         m.displayToChat("§c Unknown Command:")

@@ -1,25 +1,24 @@
-# Example TypeScript Mod
-[![NodeJS with Webpack](https://github.com/eaglerforge/example-typescript-mod/actions/workflows/bun-build.yml/badge.svg)](https://github.com/eaglerforge/example-typescript-mod/actions/workflows/webpack.yml) [![esbuild](https://github.com/eaglerforge/example-typescript-mod/actions/workflows/esbuild.yml/badge.svg)](https://github.com/eaglerforge/example-typescript-mod/actions/workflows/Buildtest.yml)
+# SurvClient
 
-## How to build?
-You can use 3 build systems, bun esbuild and webpack is all cross platform now.
+SurvClient is a survival basic eaglerforge-based client for 1.12.2 and 1.8 EaglerForge
 
-# 1 - webpack
+# Installation Steps
 
-1. Run `npm i`
-2. Modify your files accordingly.
-2. Run `npm run build`
+- Setup Eaglerforge using EFI *EaglerForge Injector*
 
-# 2 - Bun 
-1. Run `npm install -g bun`
-2. Run `bun install`
-3. Modify your files accordingly.
-4. Run `bun run build-bun`
-5. profit
 
-# 3 - esbuild
-1. Run `npm install -g esbuild`
-2. Modify your files accordingly.
-3. Run `npn run build-es`
-4. profit ( again )
-## Notes
+- Go to src Folder in my Github Repo
+
+
+- Open SurvClient.js and click on Raw
+
+
+- Copy link from your browser's Adress bar
+
+
+- Click "Add mod from URL"
+
+
+- Paste the link you copied
+
+- Thats it.
