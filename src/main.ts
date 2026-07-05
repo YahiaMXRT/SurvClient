@@ -2,6 +2,18 @@ const m = ModAPI;
 const toggles = {
     fullbright: false
 };
+var playerLocation={
+    x: Number,
+    y: Number,
+    z: Number
+};
+m.addEventListener("sendpacketplayer", (e:any) => {
+    playerLocation = {
+        x: e.x,
+        y: e.y,
+        z: e.z
+    }
+})
 const mcSettings = ModAPI.settings
 m.settings.gammaSetting = 1.0
 m.addEventListener("sendchatmessage", (e: any) => {
@@ -20,7 +32,7 @@ m.addEventListener("sendchatmessage", (e: any) => {
             m.displayToChat("§c Fullbright disabled");
         }
     } else if (e.message === "!help") {
-        m.displayToChat(" §k help\n§3 !fb (FullBright)\n§2 !help (this text)\n§1 !mode (fps, fancy)")
+        m.displayToChat(" §k help\n§3 !fb (FullBright)\n§2 !help (this text)\n§1 !mode (fps, fancy)\n§b !cLocation (Current Coordinates)")
     }
     else if (e.message.startsWith("!mode")) {
         var args = {
@@ -49,5 +61,8 @@ m.addEventListener("sendchatmessage", (e: any) => {
         } else {
             m.displayToChat("No mode exists with name: " + args.a2)
         }
+    }
+    else if (e.message === "!cLocation") {
+        m.displayToChat(`§10Current location\n§4 X: ${playerLocation.x}\n§4 Y: ${playerLocation.y}\n§4 Z: ${playerLocation.z}`)
     }
 });
