@@ -13,7 +13,7 @@ m.addEventListener("sendpacketplayer", (e:any) => {
         y: e.y,
         z: e.z
     }
-})
+});
 const mcSettings = ModAPI.settings
 m.settings.gammaSetting = 1.0
 m.addEventListener("sendchatmessage", (e: any) => {
@@ -63,7 +63,7 @@ m.addEventListener("sendchatmessage", (e: any) => {
         }
     }
     else if (e.message === "!cLocation") {
-        m.displayToChat("§10 Current Location")
+        m.displayToChat("§5 Current Location")
         m.displayToChat("§4 X:" + playerLocation.x)
         m.displayToChat("§4 Y:" + playerLocation.y)
         m.displayToChat("§4 Z:" + playerLocation.z)
