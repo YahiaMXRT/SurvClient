@@ -9,7 +9,7 @@ module.exports = {
   },
   output: {
     path: path.resolve(__dirname, './out'),
-    filename: package.name + ".js", // <--- Will be compiled to this single file
+    filename: "SurvClient" + ".js", // <--- Will be compiled to this single file
   },
   resolve: {
     extensions: [".ts", ".tsx", ".js"],

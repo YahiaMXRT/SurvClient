@@ -1,20 +1,23 @@
 const m = ModAPI;
-var toggles = {
+
+const toggles = {
     fullbright: false
 };
-m.displayToChat("Client Command has to start with: !")
+
+m.displayToChat("Client commands start with: !");
+
 m.addEventListener("sendchatmessage", (e: any) => {
-    if (e.message[0] == "!") {
-        e.preventDefault = true
-        if (e.message == "!fb") {
-            if (toggles.fullbright == false) {
-                m.displayToChat("§9 Fullbright enabled")
-                toggles.fullbright = true
-            }
-            if (toggles.fullbright == true) {
-                m.displayToChat("§3 Fullbright disabled")
-                toggles.fullbright = false
-            }
+    if (!e.message.startsWith("!")) return;
+
+    e.preventDefault = true;
+
+    if (e.message === "!fb") {
+        if (!toggles.fullbright) {
+            toggles.fullbright = true;
+            m.displayToChat("§9Fullbright enabled");
+        } else {
+            toggles.fullbright = false;
+            m.displayToChat("§3Fullbright disabled");
         }
     }
-})
+});
