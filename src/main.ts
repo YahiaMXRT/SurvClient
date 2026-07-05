@@ -4,6 +4,8 @@ const toggles = {
     fullbright: false
 };
 
+m.settings.gammaSetting = 1.0
+
 m.addEventListener("sendchatmessage", (e: any) => {
     if (!e.message.startsWith("!")) return;
 
@@ -16,7 +18,7 @@ m.addEventListener("sendchatmessage", (e: any) => {
             m.displayToChat("§a Fullbright enabled");
         } else {
             toggles.fullbright = false;
-            m.settings.gammaSetting = 0.0
+            m.settings.gammaSetting = 1.0
             m.displayToChat("§c Fullbright disabled");
         }
     } else if (e.message === "!help") {
