@@ -63,6 +63,10 @@ m.addEventListener("sendchatmessage", (e: any) => {
         }
     }
     else if (e.message === "!cLocation") {
-        m.displayToChat("§10Current location\n§4 X: " +playerLocation.x +"\n§4 Y: " + playerLocation.y + "\n§4 Z: "+ playerLocation.z)
+        m.displayToChat("§10 Current Location")
+        m.displayToChat("§4 X:" + playerLocation.x)
+        m.displayToChat("§4 Y:" + playerLocation.y)
+        m.displayToChat("§4 Z:" + playerLocation.z)
+
     }
 });
