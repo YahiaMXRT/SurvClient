@@ -4,8 +4,6 @@ const toggles = {
     fullbright: false
 };
 
-m.displayToChat("Client commands start with: !");
-
 m.addEventListener("sendchatmessage", (e: any) => {
     if (!e.message.startsWith("!")) return;
 
