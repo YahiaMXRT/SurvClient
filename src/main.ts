@@ -2,18 +2,7 @@ const m = ModAPI;
 const toggles = {
     fullbright: false
 };
-var playerLocation={
-    x:0,
-    y:0,
-    z:0
-};
-m.addEventListener("sendpacketplayer", (e:any) => {
-    playerLocation = {
-        x: e.x,
-        y: e.y,
-        z: e.z
-    }
-});
+
 const mcSettings = ModAPI.settings
 m.settings.gammaSetting = 1.0
 m.addEventListener("sendchatmessage", (e: any) => {
@@ -61,13 +50,6 @@ m.addEventListener("sendchatmessage", (e: any) => {
         } else {
             m.displayToChat("No mode exists with name: " + args.a2)
         }
-    }
-    else if (e.message === "!cLocation") {
-        m.displayToChat("§5 Current Location")
-        m.displayToChat("§4 X:" + playerLocation.x)
-        m.displayToChat("§4 Y:" + playerLocation.y)
-        m.displayToChat("§4 Z:" + playerLocation.z)
-
     } else {
         m.displayToChat("§c Unknown Command:")
         m.displayToChat("§c" + e.message)
