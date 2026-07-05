@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+
+set -e
+
+npm run build
+
+git add .
+
+git commit -m "setupbuild commit" || echo "Nothing to commit"
+
+git pull --rebase origin main
+
+git push origin HEAD:main
