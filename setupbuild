@@ -4,7 +4,7 @@ set -e
 
 npm run build
 
-rm -rf out/EaglerForge-*.js
+rm -rf out/EaglerForge*
 
 git add .
 
