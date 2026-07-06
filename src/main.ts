@@ -2,8 +2,8 @@ const m = ModAPI;
 const toggles = {
     fullbright: false
 };
-var ev1: string | any[] = [];
-m.addEventListener("event", (e) => {
+var ev1: any[] = [];
+m.addEventListener("event", (e: any) => {
     ev1.concat(e.event)
 })
 const mcSettings = ModAPI.settings
@@ -58,7 +58,7 @@ m.addEventListener("sendchatmessage", (e: any) => {
         m.displayToChat("§9 Current Client Version: 0.0.1")
     } else if (e.message === "!devlog") {
         m.displayToChat(
-            "§d Log: \n" + ModAPI.world
+            "§d Log: \n" + ev1.map(i => "§e Event: " + i + "\n").join("")
         )
     }
     else {
