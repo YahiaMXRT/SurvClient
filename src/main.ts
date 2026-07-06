@@ -76,7 +76,7 @@ m.addEventListener("sendchatmessage", (e: any) => {
         m.displayToChat(
             "§d Log: \n" + ev1.map(i => "§e Event: " + i.event + "\n§d Data:" + JSON.stringify(i.data)).join("\n")
         )
-    } else if (e.message.startswith("!eval")) {
+    } else if (e.message.startsWith("!eval")) {
         var code = e.message.split("!eval ")[1];
         m.displayToChat("§d Eval:\n§e " + eval(code))
     }
