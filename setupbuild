@@ -4,6 +4,8 @@ set -e
 
 npm run build
 
+rm -rf out/EaglerForge-*.js
+
 git add .
 
 git commit -m "setupbuild commit" || echo "Nothing to commit"

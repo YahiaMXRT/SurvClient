@@ -8,7 +8,7 @@ let lastLog = 0;
 m.addEventListener("event", (e: any) => {
     const now = Date.now();
 
-    if (now - lastLog >= 10000) { // 30 seconds
+    if (now - lastLog >= 50000) { // 30 seconds
         lastLog = now;
 
         ev1.push({
