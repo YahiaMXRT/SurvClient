@@ -29,6 +29,7 @@ module.exports = {
     ]
   },
   optimization: {
+    mangleExports: 'deterministic',
     minimize: false,
   },
 };
