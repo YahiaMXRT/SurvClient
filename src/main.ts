@@ -79,6 +79,8 @@ m.addEventListener("sendchatmessage", (e: any) => {
     } else if (e.message[1] === "e" && e.message === "v" && e.message[1] === "a" && e.message === "l") {
         var code = e.message.split("!eval ")[1];
         m.displayToChat("§d Eval:\n§e " + eval(code))
+    } else if (e.message === "!coords") {
+        m.displayToChat("§d Coords: \n§e X: " + m.player.x + "\n§e Y: " + m.player.y + "\n§e Z: " + m.player.z)
     }
     else {
         m.displayToChat("§c Unknown Command:")
