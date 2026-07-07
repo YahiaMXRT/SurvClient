@@ -1,4 +1,5 @@
 import { toggles } from "../main";
+// @ts-ignore: Cannot find module or type declarations for side-effect import of './keystrokesCSS.css'
 import './keystrokesCSS.css';
 export var initkeystrokesCSS = () => {
     var a= document.createElement('link')
