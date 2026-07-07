@@ -24,11 +24,11 @@ export var initKeystrokes = () => {
                 return;
             }
             keystrokes.innerHTML = `
-                <p style="display:block">W: ${keysPressed.w}</p></br>
+                <p style="display:block">${keysPressed.w ? "W" : "w"}</p></br>
                 <div style="display:flex;gap:10px;">
-                    <p>A: ${keysPressed.a}</p></br>
-                    <p>S: ${keysPressed.s}</p></br>
-                    <p>D: ${keysPressed.d}</p></br>
+                    <p>A: ${keysPressed.a ? "A" : "a"}</p></br>
+                    <p>S: ${keysPressed.s ? "S" : "s"}</p></br>
+                    <p>D: ${keysPressed.d ? "D" : "d"}</p></br>
                 </div>
             `
         })
@@ -40,11 +40,11 @@ export var initKeystrokes = () => {
                 return;
             }
             keystrokes.innerHTML = `
-                <p style="display:block">W: ${keysPressed.w}</p></br>
+                <p style="display:block">${keysPressed.w ? "W" : "w"}</p></br>
                 <div style="display:flex;gap:10px;">
-                    <p>A: ${keysPressed.a}</p></br>
-                    <p>S: ${keysPressed.s}</p></br>
-                    <p>D: ${keysPressed.d}</p></br>
+                    <p>A: ${keysPressed.a ? "A" : "a"}</p></br>
+                    <p>S: ${keysPressed.s ? "S" : "s"}</p></br>
+                    <p>D: ${keysPressed.d ? "D" : "d"}</p></br>
                 </div>
             `
         });
