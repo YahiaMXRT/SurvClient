@@ -7,7 +7,8 @@ export var initKeystrokes = () => {
         keystrokes.style.top = "10px";
         keystrokes.style.display ="flex";
         keystrokes.style.flexDirection = "column"
-        keystrokes.style.gap = "10px"
+        keystrokes.style.gap = "2px"
+        keystrokes.style.justifyContent = "center"
         keystrokes.style.right = "10px";
         keystrokes.style.fontSize = "20px";
         keystrokes.style.color = "white";
