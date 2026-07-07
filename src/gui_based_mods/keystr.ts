@@ -5,6 +5,8 @@ export var initKeystrokes = () => {
         keystrokes.id = "keystrokes_"
         keystrokes.style.position = "absolute";
         keystrokes.style.bottom = "10px";
+        keystrokes.style.display ="flex";
+        keystrokes.style.gap = "10px"
         keystrokes.style.left = "10px";
         keystrokes.style.fontSize = "20px";
         keystrokes.style.color = "white";
@@ -19,6 +21,12 @@ export var initKeystrokes = () => {
             } else {
                 return;
             }
+            keystrokes.innerHTML = `
+                <p>W: ${keysPressed.w}</p></br>
+                <p>A: ${keysPressed.a}</p></br>
+                <p>S: ${keysPressed.s}</p></br>
+                <p>D: ${keysPressed.d}</p></br>
+            `
         })
 
         window.addEventListener("keyup", (e) => {
@@ -27,13 +35,14 @@ export var initKeystrokes = () => {
             } else {
                 return;
             }
+            keystrokes.innerHTML = `
+                <p>W: ${keysPressed.w}</p></br>
+                <p>A: ${keysPressed.a}</p></br>
+                <p>S: ${keysPressed.s}</p></br>
+                <p>D: ${keysPressed.d}</p></br>
+            `
         });
-        keystrokes.innerHTML = `
-            <p>W: ${keysPressed.w}</p></br>
-            <p>A: ${keysPressed.a}</p></br>
-            <p>S: ${keysPressed.s}</p></br>
-            <p>D: ${keysPressed.d}</p></br>
-        `
+        
     } else if (toggles.keystrokes === false) {
         if (document.getElementById("keystrokes_")) {
             document.getElementById("keystrokes_")?.remove()
