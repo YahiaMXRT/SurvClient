@@ -24,7 +24,7 @@ module.exports = {
         test: /\.(png|jpg|gif)$/i,
         type: 'asset/inline'
       },
-      { test: /\.css$/, use: 'css-loader' }
+        { test: /\.css$/, use: ['style-loader', 'css-loader'] }
         
     ]
   },
