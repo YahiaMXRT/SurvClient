@@ -8,6 +8,7 @@ export var initFpsMod = () => {
         ModAPI.addEventListener("update", () => {
             fps.innerHTML = `<span class="fpsm-inner">${ModAPI.getFPS()}</span>`
         })
+        document.body.appendChild(fps)
     } else if (toggles.fpsMod == false) {
         if (document.getElementById("fpsm_")) {
             document.getElementById("fpsm_").remove()

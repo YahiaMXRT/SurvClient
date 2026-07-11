@@ -95,12 +95,12 @@ m.addEventListener("sendchatmessage", (e: any) => {
         initKeystrokes()
     } else if (e.message == "!fps") {
         if (toggles.fpsMod == true) {
-            m.displayToChat("§a §lFPS mod enabled");
             toggles.fpsMod = false
-            
+            m.displayToChat("§a §lFPS mod enabled");            
         } else if (toggles.fpsMod == false) {
-            m.displayToChat("§c §lFPS mod disabled");
             toggles.fpsMod = true
+            m.displayToChat("§c §lFPS mod disabled");
+        
         }
         initFpsMod()
     }
