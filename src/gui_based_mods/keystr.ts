@@ -9,6 +9,7 @@ let handleKeyDown: ((e: KeyboardEvent) => void) | null = null;
 let handleKeyUp: ((e: KeyboardEvent) => void) | null = null;
 let handleMouseDown: ((e: MouseEvent) => void) | null = null;
 let handleMouseUp: ((e: MouseEvent) => void) | null = null;
+let handleContextMenu: ((e: MouseEvent) => void) | null = null;
 
 export var initkeystrokesCSS = () => {
     // CSS is imported at module load; with style-loader it will be injected automatically.
@@ -58,6 +59,7 @@ const attachListeners = () => {
             keysPressed.lmb = true;
         } else if (e.button === 2) {
             keysPressed.rmb = true;
+            e.preventDefault();
         }
         renderKeystrokes();
     };
@@ -68,14 +70,20 @@ const attachListeners = () => {
             keysPressed.lmb = false;
         } else if (e.button === 2) {
             keysPressed.rmb = false;
+            e.preventDefault();
         }
         renderKeystrokes();
+    };
+
+    handleContextMenu = (e: MouseEvent) => {
+        e.preventDefault();
     };
 
     window.addEventListener("keydown", handleKeyDown);
     window.addEventListener("keyup", handleKeyUp);
     document.addEventListener("mousedown", handleMouseDown);
     document.addEventListener("mouseup", handleMouseUp);
+    window.addEventListener("contextmenu", handleContextMenu);
     listenersAttached = true;
 };
 
@@ -86,11 +94,13 @@ const detachListeners = () => {
     if (handleKeyUp) window.removeEventListener("keyup", handleKeyUp);
     if (handleMouseDown) document.removeEventListener("mousedown", handleMouseDown);
     if (handleMouseUp) document.removeEventListener("mouseup", handleMouseUp);
+    if (handleContextMenu) window.removeEventListener("contextmenu", handleContextMenu);
 
     handleKeyDown = null;
     handleKeyUp = null;
     handleMouseDown = null;
     handleMouseUp = null;
+    handleContextMenu = null;
     listenersAttached = false;
     keysPressed = null;
 };

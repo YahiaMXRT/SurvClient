@@ -87,19 +87,19 @@ m.addEventListener("sendchatmessage", (e: any) => {
     } else if (e.message === "!keystrokes") {
         if (toggles.keystrokes == true) {
             toggles.keystrokes = false
-            m.displayToChat("§a §lKeystrokes enabled");
+            m.displayToChat("§c §lKeystrokes disabled");
         } else if (toggles.keystrokes == false) {
             toggles.keystrokes = true
-            m.displayToChat("§c §lKeystrokes disabled");
+            m.displayToChat("§a §lKeystrokes enabled");
         }
         initKeystrokes()
     } else if (e.message == "!fps") {
         if (toggles.fpsMod == true) {
             toggles.fpsMod = false
-            m.displayToChat("§a §lFPS mod enabled");            
+            m.displayToChat("§c §lFPS mod disabled");            
         } else if (toggles.fpsMod == false) {
             toggles.fpsMod = true
-            m.displayToChat("§c §lFPS mod disabled");
+            m.displayToChat("§a §lFPS mod enabled");
         
         }
         initFpsMod()
