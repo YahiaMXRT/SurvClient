@@ -1,21 +1,44 @@
 import {toggles} from "../main"
-var handler = (el: HTMLDivElement) => {
-    el.innerHTML = `<span class="fpsm-inner">${ModAPI.getFPS()}</span>`
-}
+// @ts-ignore: side-effect import so webpack can bundle and inject CSS
 import './fpsmodCSS.css'
+
+let fpsElement: HTMLDivElement | null = null;
+let updateHandler: ((e?: any) => void) | null = null;
+
+const renderFps = () => {
+    if (!fpsElement) return;
+    const fps = typeof ModAPI.getFPS === "function" ? ModAPI.getFPS() : 0;
+    fpsElement.innerHTML = `<span class="fpsm-inner">${fps}</span>`;
+}
+
 export var initFpsMod = () => {
-    if (toggles.fpsMod == true) {
-        var fps = document.createElement('div');
-        fps.id = "fpsm_"
-        var uHandler = () => handler(fps)
-        var tempEvent = ModAPI.addEventListener("update", uHandler)
-        document.body.appendChild(fps)
-    } else if (toggles.fpsMod == false) {
-        if (document.getElementById("fpsm_") && uHandler) {
-            document.getElementById("fpsm_").remove()
-            ModAPI.removeEventListener("update", uHandler)
-        } else {
-            return 0
+    if (!document.body) return;
+
+    if (toggles.fpsMod) {
+        if (!fpsElement) {
+            fpsElement = document.createElement('div');
+            fpsElement.id = "fpsm_";
+            document.body.appendChild(fpsElement);
         }
+
+        if (!updateHandler) {
+            updateHandler = () => renderFps();
+            ModAPI.addEventListener("update", updateHandler);
+        }
+
+        renderFps();
+    } else {
+        if (updateHandler) {
+            if (typeof ModAPI.removeEventListener === "function") {
+                ModAPI.removeEventListener("update", updateHandler);
+            }
+        }
+
+        if (fpsElement && fpsElement.isConnected) {
+            fpsElement.remove();
+        }
+
+        fpsElement = null;
+        updateHandler = null;
     }
 }
