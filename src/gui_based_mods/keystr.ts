@@ -31,7 +31,7 @@ export var initKeystrokes = () => {
     window.removeEventListener("keydown", handlers.keyDown)
     window.removeEventListener("keyup", handlers.keyUp)
     document.removeEventListener("mousedown", handlers.mouseDown)
-    document.removeEventListener("mousedown", handlers.mouseUp)
+    document.removeEventListener("mouseup", handlers.mouseUp)
     if (el) el.remove();
   }
 };
