@@ -1,3 +1,4 @@
+import { keystrokesRndr } from "../keystr";
 export var keysPressed: { [key: string]: boolean } = {
   w: false,
   a: false,
@@ -6,9 +7,9 @@ export var keysPressed: { [key: string]: boolean } = {
   lmb: false,
   rmb: false,
 };
-var keystrokes: HTMLElement;
+
 export var handleRender = () => {
-  keystrokes.innerHTML = `
+  keystrokesRndr.innerHTML = `
                     <p style="display:block" ${keysPressed.w ? 'class="lighter"' : ""}>${keysPressed.w ? "W" : "w"}</p></br>
                     <div style="display:flex;gap:10px;">
                         <p ${keysPressed.a ? 'class="lighter"' : ""}>${keysPressed.a ? "A" : "a"}</p></br>
@@ -49,5 +50,5 @@ export var handlers = {
     if (!(k in keysPressed)) return;
     keysPressed[k] = true;
     handleRender();
-  }
+  },
 };
