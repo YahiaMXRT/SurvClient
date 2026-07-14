@@ -37,7 +37,21 @@
     box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.08);
     transition: background-color 0.15s ease, transform 0.15s ease, color 0.15s ease;
 }
-
+#keystrokes_ p.space {
+    width: 100%;
+    height: 10px;
+    margin: 0;
+    padding: 10px 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.12);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.08);
+    transition: background-color 0.15s ease, transform 0.15s ease, color 0.15s ease;
+}
 #keystrokes_ p.lighter {
     background-color: rgba(255, 255, 255, 0.8) !important;
     color: #10131a;
