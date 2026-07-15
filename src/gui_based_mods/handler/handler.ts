@@ -18,9 +18,9 @@ export var handleRender = () => {
       <p ${keysPressed.d ? 'class="lighter"' : ""}>${keysPressed.d ? "D" : "d"}</p></br>                  
     </div>
     <div>
-      <p class="space${keysPressed.d ? ' lighter' : ""}"></p>
+      <p class="space${keysPressed.space ? ' lighter' : ""}"></p>
     </div>       
-    <div style="display:flex;gap:10px;"></div>
+    <div style="display:flex;gap:10px;">
       <p ${keysPressed.lmb ? 'class="lighter"' : ""}>${keysPressed.lmb ? "LMB" : "lmb"}</p></br>
       <p ${keysPressed.rmb ? 'class="lighter"' : ""}>${keysPressed.rmb ? "RMB" : "rmb"}</p></br>                     
     </div>  

@@ -30,8 +30,8 @@ export var initKeystrokes = () => {
     const el = document.getElementById("keystrokes_");
     window.removeEventListener("keydown", handlers.keyDown)
     window.removeEventListener("keyup", handlers.keyUp)
-    document.removeEventListener("mousedown", handlers.mouseDown)
-    document.removeEventListener("mouseup", handlers.mouseUp)
+    window.removeEventListener("mousedown", handlers.mouseDown)
+    window.removeEventListener("mouseup", handlers.mouseUp)
     if (el) el.remove();
   }
 };

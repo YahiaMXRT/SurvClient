@@ -4,6 +4,7 @@ import './fpsmodCSS.css'
 
 let fpsElement: HTMLDivElement | null = null;
 let updateHandler: ((e?: any) => void) | null = null;
+let Interval: any = null;
 
 const renderFps = () => {
     if (!fpsElement) return;
@@ -23,14 +24,14 @@ export var initFpsMod = () => {
 
         if (!updateHandler) {
             updateHandler = () => renderFps();
-             var Interval: any = setInterval(updateHandler,30);
+            Interval = setInterval(updateHandler,30);
         }
 
         renderFps();
     } else {
         if (updateHandler) {
             if (Interval) {
-                Interval = undefined
+                clearInterval(Interval)
             }
         }
 
