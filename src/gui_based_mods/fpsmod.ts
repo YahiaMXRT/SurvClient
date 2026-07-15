@@ -23,14 +23,14 @@ export var initFpsMod = () => {
 
         if (!updateHandler) {
             updateHandler = () => renderFps();
-            ModAPI.addEventListener("update", updateHandler);
+             var Interval: any = setInterval(updateHandler,30);
         }
 
         renderFps();
     } else {
         if (updateHandler) {
-            if (typeof ModAPI.removeEventListener === "function") {
-                ModAPI.removeEventListener("update", updateHandler);
+            if (Interval) {
+                Interval = undefined
             }
         }
 
